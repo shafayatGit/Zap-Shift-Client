@@ -12,9 +12,10 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const location = useLocation();
+  console.log(location)
   const navigation = useNavigate()
 
-  const from = location.state.from || "/";
+  const from = location.state?.from || "/";
 
   const onSubmit = (data) => {
     signIn(data.email, data.password)
