@@ -63,7 +63,7 @@ const PaymentForm = () => {
         amountInCents,
         parcelId,
       });
-      console.log(res)
+     
 
       const clientSecret = res.data.clientSecret;
 
@@ -84,8 +84,9 @@ const PaymentForm = () => {
         setError("");
         if (result.paymentIntent.status === "succeeded") {
           console.log("Payment succeeded!");
-        //   const transactionId = result.paymentIntent.id;
-        //   // step-4 mark parcel paid also create payment history
+          console.log(result);
+          const transactionId = result.paymentIntent.id;
+          // step-4 mark parcel paid also create payment history
         //   const paymentData = {
         //     parcelId,
         //     email: user.email,
